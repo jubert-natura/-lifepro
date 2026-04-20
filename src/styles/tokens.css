@@ -1,0 +1,416 @@
+/* ============================================================
+ * LifePro Fitness — Design Tokens (CSS Custom Properties)
+ * Source of truth: Figma file 03yABO4wJSV78SPvLjdkyB
+ * Generated from variable collections:
+ *   - Primitives/Colors (1 mode: Default) — 20 vars
+ *   - Responsive/Spacing (3 modes: Desktop XL 1920 / Desktop 1440 / Mobile 430) — 48 vars
+ *   - Effects/Shadows (1 mode: Default) — 6 vars
+ *   - Local text styles (13) and effect styles (6)
+ *
+ * Default :root holds the Desktop (1440) values.
+ * Override with media queries for Desktop XL and Mobile.
+ * ============================================================ */
+
+/* Brand font (Area Normal) — self-hosted from /public/fonts */
+@font-face {
+  font-family: "area-normal";
+  src: url("/fonts/Area Normal Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "area-normal";
+  src: url("/fonts/Area Normal Regular Italic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "area-normal";
+  src: url("/fonts/Area Normal Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "area-normal";
+  src: url("/fonts/Area Normal Medium Italic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "area-normal";
+  src: url("/fonts/Area Normal SemiBold.woff") format("woff");
+  font-weight: 600 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "area-normal";
+  src: url("/fonts/Area Normal SemiBold Italic.woff") format("woff");
+  font-weight: 600 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "area-normal";
+  src: url("/fonts/Area Normal Extrablack.woff") format("woff");
+  font-weight: 800 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "area-normal";
+  src: url("/fonts/Area Normal Extrablack Italic.woff") format("woff");
+  font-weight: 800 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "area-normal";
+  src: url("/fonts/Area Normal Thin Italic.woff") format("woff");
+  font-weight: 100 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  /* ────────────────────────────────────────────────
+   * COLORS — Primitives/Colors (single mode)
+   * ──────────────────────────────────────────────── */
+
+  /* Brand */
+  --color-brand-primary: #F15A29;
+  --color-brand-primary-hover: #D94818;
+  --color-brand-primary-pressed: #B83A12;
+  --color-brand-ink: #1A1A1A;
+
+  /* Accent */
+  --color-accent-peach: #FFE5D6;
+  --color-accent-periwinkle: #C8D0E0;
+
+  /* Neutral scale */
+  --color-neutral-white: #FFFFFF;
+  --color-neutral-25: #FAFAFA;
+  --color-neutral-50: #F7F8FA;
+  --color-neutral-100: #EEF1F5;
+  --color-neutral-150: #E4E7EC;
+  --color-neutral-200: #D9DEE5;
+  --color-neutral-400: #8A93A1;
+  --color-neutral-600: #4A5160;
+  --color-neutral-900: #111418;
+
+  /* Semantic */
+  --color-semantic-success: #2BA66B;
+  --color-semantic-error: #D93025;
+  --color-semantic-warning: #F4B400;
+  --color-semantic-info: #2F6FED;
+  --color-semantic-star: #F4B400;
+
+  /* ────────────────────────────────────────────────
+   * TYPOGRAPHY — Font families + weights
+   * ──────────────────────────────────────────────── */
+
+  --font-family-base: "area-normal", sans-serif;
+  --font-family-display: "area-normal", sans-serif;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* ────────────────────────────────────────────────
+   * TYPOGRAPHY — Sizes (Desktop 1440 mode)
+   * ──────────────────────────────────────────────── */
+
+  --type-display-1: 56px;
+  --type-display-2: 48px;
+  --type-h1: 36px;
+  --type-h2: 34px;
+  --type-h3: 28px;
+  --type-h4: 22px;
+  --type-subtitle: 18px;
+  --type-body-xl: 18px;
+  --type-body-lg: 16px;
+  --type-body-md: 16px;
+  --type-body-sm: 14px;
+  --type-caption: 12px;
+  --type-button: 18px;
+
+  /* Local text-style ramp (line-heights + letter-spacing per spec) */
+  --line-height-display-xl: 1.05;
+  --line-height-h1: 1.10;
+  --line-height-h2: 1.15;
+  --line-height-h3: 1.20;
+  --line-height-h4: 1.30;
+  --line-height-eyebrow: 1.40;
+  --line-height-body-l: 1.55;
+  --line-height-body-m: 1.50;
+  --line-height-body-s: 1.40;
+  --line-height-caption: 1.40;
+  --line-height-button: 1.00;
+
+  --letter-spacing-display-xl: -0.02em;
+  --letter-spacing-h1: -0.02em;
+  --letter-spacing-eyebrow: 0.12em;
+  --letter-spacing-button: 0.04em;
+
+  /* ────────────────────────────────────────────────
+   * SPACING — 8pt grid (Desktop 1440 mode)
+   * ──────────────────────────────────────────────── */
+
+  --spacing-2xs: 4px;
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 40px;
+  --spacing-3xl: 56px;
+  --spacing-4xl: 64px;
+  --spacing-section: 96px;
+
+  /* ────────────────────────────────────────────────
+   * PADDING tokens (Desktop 1440 mode)
+   * ──────────────────────────────────────────────── */
+
+  --padding-button-y: 12px;
+  --padding-button-x: 24px;
+  --padding-input-y: 12px;
+  --padding-input-x: 16px;
+  --padding-card: 20px;
+  --padding-container: 64px;
+  --padding-navbar-x: 32px;
+  --padding-navbar-y: 16px;
+
+  /* ────────────────────────────────────────────────
+   * SIZING tokens (Desktop 1440 mode)
+   * ──────────────────────────────────────────────── */
+
+  --sizing-screen-width: 1440px;
+  --sizing-container-max: 1200px;
+  --sizing-navbar-height: 64px;
+  --sizing-button-min-width: 120px;
+  --sizing-input-height: 48px;
+  --sizing-card-width: 320px;
+  --sizing-card-image-height: 180px;
+  --sizing-icon-sm: 16px;
+  --sizing-icon-md: 24px;
+  --sizing-icon-lg: 32px;
+
+  /* ────────────────────────────────────────────────
+   * RADIUS tokens (consistent across modes)
+   * ──────────────────────────────────────────────── */
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 999px;
+  --radius-pill: 999px;
+
+  /* ────────────────────────────────────────────────
+   * SHADOWS — Effects/Shadows
+   * ──────────────────────────────────────────────── */
+
+  --shadow-xs: 0 1px 2px rgba(17, 20, 24, 0.06);
+  --shadow-sm: 0 2px 6px rgba(17, 20, 24, 0.08);
+  --shadow-card: 0 4px 14px rgba(17, 20, 24, 0.08);
+  --shadow-card-hover: 0 10px 28px rgba(17, 20, 24, 0.12);
+  --shadow-modal: 0 24px 60px rgba(17, 20, 24, 0.22);
+  --shadow-cta: 0 6px 16px rgba(241, 90, 41, 0.25);
+}
+
+/* ============================================================
+ * RESPONSIVE — Desktop XL (≥1920px)
+ * ============================================================ */
+@media (min-width: 1920px) {
+  :root {
+    /* Type sizes */
+    --type-display-1: 64px;
+    --type-display-2: 56px;
+    --type-h1: 40px;
+    --type-h2: 38px;
+    --type-h3: 32px;
+    --type-h4: 24px;
+    --type-subtitle: 20px;
+    --type-body-xl: 20px;
+    --type-body-lg: 18px;
+    --type-body-md: 16px;
+    --type-body-sm: 14px;
+    --type-caption: 12px;
+    --type-button: 20px;
+
+    /* Spacing */
+    --spacing-2xl: 48px;
+    --spacing-3xl: 64px;
+    --spacing-4xl: 80px;
+    --spacing-section: 120px;
+
+    /* Padding */
+    --padding-card: 24px;
+    --padding-container: 80px;
+    --padding-navbar-x: 48px;
+
+    /* Sizing */
+    --sizing-screen-width: 1920px;
+    --sizing-container-max: 1440px;
+    --sizing-navbar-height: 72px;
+    --sizing-card-width: 380px;
+    --sizing-card-image-height: 220px;
+  }
+}
+
+/* ============================================================
+ * RESPONSIVE — Mobile (≤430px)
+ * ============================================================ */
+@media (max-width: 430px) {
+  :root {
+    /* Type sizes */
+    --type-display-1: 36px;
+    --type-display-2: 32px;
+    --type-h1: 28px;
+    --type-h2: 24px;
+    --type-h3: 22px;
+    --type-h4: 18px;
+    --type-subtitle: 16px;
+    --type-body-xl: 16px;
+    --type-body-lg: 15px;
+    --type-body-md: 14px;
+    --type-body-sm: 13px;
+    --type-caption: 11px;
+    --type-button: 16px;
+
+    /* Spacing */
+    --spacing-2xs: 2px;
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 12px;
+    --spacing-lg: 16px;
+    --spacing-xl: 24px;
+    --spacing-2xl: 32px;
+    --spacing-3xl: 40px;
+    --spacing-4xl: 48px;
+    --spacing-section: 64px;
+
+    /* Padding */
+    --padding-button-y: 10px;
+    --padding-button-x: 16px;
+    --padding-input-y: 10px;
+    --padding-input-x: 12px;
+    --padding-card: 16px;
+    --padding-container: 16px;
+    --padding-navbar-x: 16px;
+    --padding-navbar-y: 12px;
+
+    /* Sizing */
+    --sizing-screen-width: 430px;
+    --sizing-container-max: 398px;
+    --sizing-navbar-height: 56px;
+    --sizing-button-min-width: 100px;
+    --sizing-input-height: 40px;
+    --sizing-card-width: 398px;
+    --sizing-card-image-height: 160px;
+    --sizing-icon-sm: 14px;
+    --sizing-icon-md: 20px;
+    --sizing-icon-lg: 28px;
+
+    /* Radius */
+    --radius-xl: 20px;
+  }
+}
+
+/* ============================================================
+ * TEXT-STYLE UTILITY CLASSES (mirror of Figma local text styles)
+ * ============================================================ */
+
+.t-display-xl {
+  font-family: var(--font-family-display);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--type-display-1);
+  line-height: var(--line-height-display-xl);
+  letter-spacing: var(--letter-spacing-display-xl);
+}
+.t-h1 {
+  font-family: var(--font-family-display);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--type-h1);
+  line-height: var(--line-height-h1);
+  letter-spacing: var(--letter-spacing-h1);
+}
+.t-h2 {
+  font-family: var(--font-family-display);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--type-h2);
+  line-height: var(--line-height-h2);
+}
+.t-h3 {
+  font-family: var(--font-family-display);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--type-h3);
+  line-height: var(--line-height-h3);
+}
+.t-h4 {
+  font-family: var(--font-family-display);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--type-h4);
+  line-height: var(--line-height-h4);
+}
+.t-eyebrow {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-semibold);
+  font-size: 13px;
+  line-height: var(--line-height-eyebrow);
+  letter-spacing: var(--letter-spacing-eyebrow);
+  text-transform: uppercase;
+}
+.t-body-l {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--type-body-lg);
+  line-height: var(--line-height-body-l);
+}
+.t-body-m {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--type-body-md);
+  line-height: var(--line-height-body-m);
+}
+.t-body-s {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--type-body-sm);
+  line-height: var(--line-height-body-s);
+}
+.t-caption {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--type-caption);
+  line-height: var(--line-height-caption);
+}
+.t-button-lg {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-semibold);
+  font-size: 16px;
+  line-height: var(--line-height-button);
+  letter-spacing: var(--letter-spacing-button);
+  text-transform: uppercase;
+}
+.t-button-md {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-semibold);
+  font-size: 14px;
+  line-height: var(--line-height-button);
+  letter-spacing: var(--letter-spacing-button);
+  text-transform: uppercase;
+}
+.t-button-sm {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-semibold);
+  font-size: 13px;
+  line-height: var(--line-height-button);
+  letter-spacing: var(--letter-spacing-button);
+  text-transform: uppercase;
+}
