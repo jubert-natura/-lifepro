@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://use.typekit.net/jhi0vox.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lifepro Waver — The Ultimate Vibration Plate</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ── Reset & Base ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  img { max-width: 100%; display: block; }
+  a { text-decoration: none; }
+
+  /* ── Design tokens ── */
+  :root {
+    --brand:   #F15A29;
+    --brand-deep: #D94818;
+    --ink:     #1A1A1A;
+    --body:    #4A5160;
+    --muted:   #8A93A1;
+    --peach:   #FFE8DC;
+    --peri:    #D6DCEA;
+    --surface: #F6F7F9;
+    --line:    #E4E7EC;
+    --star:    #F4B400;
+    --ok:      #2BA66B;
+    --bad:     #D93025;
+    --shadow-card: 0 4px 12px rgba(17,20,24,0.06);
+    --shadow-cta:  0 6px 16px rgba(241,90,41,0.25);
+  }
+
+  /* ── Typography ── */
+  body { font-family: "area-normal", sans-serif; color: var(--body); background: #fff; }
+  h1, h2, h3, h4 { font-family: "area-normal", sans-serif; color: var(--ink); }
+
+  /* ── Utilities ── */
+  .container-pg { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brand); }
+
+  .cta {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    background: var(--brand); color: #fff; font-weight: 700;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    padding: 16px 36px; border-radius: 999px; font-size: 15px;
+    box-shadow: var(--shadow-cta); transition: background .15s, transform .15s;
+    cursor: pointer;
+  }
+  .cta:hover { background: var(--brand-deep); transform: translateY(-1px); }
+
+  .review-row { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--body); }
+  .star  { color: var(--star); }
+  .check { color: var(--ok); }
+  .xmark { color: var(--bad); }
+  .text-muted { color: var(--muted); }
+  .text-brand { color: var(--brand); }
+  .text-ink   { color: var(--ink); }
+  .line-through { text-decoration: line-through; }
+  .font-bold { font-weight: 700; }
+  .font-semibold { font-weight: 600; }
+  .uppercase { text-transform: uppercase; }
+
+  /* Placeholder image boxes */
+  .ph {
+    background: linear-gradient(135deg, #FFE8DC, #D6DCEA);
+    border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--muted); font-size: 12px; font-family: monospace;
+    overflow: hidden;
+  }
+  .ph img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* ── 01 NAV ── */
+  nav { border-bottom: 1px solid var(--line); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
+  .nav-logo { display: flex; align-items: center; gap: 8px; }
+  .nav-icon {
+    width: 32px; height: 32px; background: var(--brand); border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .nav-wordmark { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 20px; color: var(--ink);width: 120px;}
+  .cta-sm { padding: 10px 20px; font-size: 13px; }
+
+  /* ── 02 HERO ── */
+  .hero {
+    background: url('lifepro/hero-banner.jpg') center/cover no-repeat;
+    padding: 64px 0;
+  }
+  .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .hero h1 { font-size: 40px; line-height: 1.15; letter-spacing: -0.02em; }
+  .hero-sub { margin-top: 16px; color: var(--body); font-size: 15px; line-height: 1.7; }
+  .hero-list { margin-top: 24px; list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 15px; color: var(--ink); }
+  .hero-list li { display: flex; align-items: center; gap: 12px; }
+  .hero-cta { margin-top: 32px; }
+  .hero-reviews { margin-top: 16px; }
+  .hero-img { height: 480px; opacity: 0; background: linear-gradient(135deg, #FFE8DC, #F6F7F9); }
+
+  /* ── 03 PILLARS ── */
+  .pillars { background: var(--surface); padding: 64px 0; }
+  .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; text-align: center; }
+  .pillar-icon { width: 100px; margin: 0 auto 8px; background: none; }
+  .pillar-icon img { width: 100%; }
+  .pillar p { color: var(--body); font-size: 14px; line-height: 1.6; }
+
+  /* ── 04 OSCILLATION BREAKTHROUGH ── */
+  .breakthrough { background: #fff; padding: 80px 0; }
+  .breakthrough-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .breakthrough-img { height: 420px; background: radial-gradient(circle, #FFE8DC 0%, #fff 70%); }
+  .breakthrough-img img { width: 100%; height: 100%; object-fit: contain; }
+  .breakthrough h2 { font-size: 34px; line-height: 1.2; margin-top: 12px; }
+  .breakthrough p { margin-top: 16px; color: var(--body); line-height: 1.7; }
+  .breakthrough .cta { margin-top: 24px; }
+  .breakthrough .review-row { margin-top: 16px; }
+
+  /* ── 05/14 BUNDLE ── */
+  .bundle { background: #fff; padding-bottom: 64px; }
+  .bundle h3 { font-size: 24px; font-weight: 700; margin-bottom: 24px; }
+  .bundle-card {
+    background: #fff; border-radius: 16px; border: 1px solid var(--line);
+    box-shadow: var(--shadow-card); padding: 24px;
+  }
+  .bundle-row { display: flex; align-items: center; gap: 24px; }
+  .bundle-img { width: 96px; height: 96px; flex-shrink: 0; border-radius: 12px; overflow: hidden; }
+  .bundle-img img { width: 100%; height: 100%; object-fit: cover; }
+  .bundle-plus { font-size: 30px; color: var(--muted); }
+  .bundle-total { flex: 1; text-align: right; }
+  .bundle-total .label { font-size: 14px; color: var(--muted); }
+  .bundle-total .price { font-size: 24px; font-weight: 700; color: var(--ink); }
+  .bundle-total .cta { margin-top: 12px; font-size: 13px; padding: 12px 24px; }
+  .bundle-items { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 12px; }
+  .bundle-item { display: flex; align-items: center; gap: 12px; font-size: 14px; }
+  .bundle-item input[type="checkbox"] { accent-color: var(--brand); width: 16px; height: 16px; }
+  .bundle-item .item-price { margin-left: auto; display: flex; gap: 6px; align-items: center; }
+
+  /* ── 06 USE-CASE GRID ── */
+  .use-cases { background: #fff; padding: 48px 0; }
+  .use-cases-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px; }
+  .use-case-img { aspect-ratio: 1/1; border-radius: 16px; overflow: hidden; }
+  .use-case-img img { width: 100%; height: 100%; object-fit: cover; }
+  .use-cases p { margin-top: 12px; font-size: 13px; color: var(--body); line-height: 1.5; }
+
+  /* ── 07 TRUST BADGES ── */
+  .trust { background: var(--peri); padding: 48px 0; }
+  .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; text-align: center; }
+  .trust-img { width: 128px; margin: 0 auto 8px; }
+  .trust-img img { width: 100%; }
+  .trust-label { font-weight: 700; color: var(--ink); }
+
+  /* ── 08 TRANSFORMATION ── */
+  .transformation { background: var(--surface); padding: 80px 0; }
+  .transformation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+  .transformation h2 { font-size: 40px; font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; }
+  .transformation-tagline { color: var(--brand); font-weight: 600; margin-top: 12px; font-size: 17px; }
+  .transformation-body { margin-top: 20px; color: var(--body); font-size: 15px; line-height: 1.7; }
+  .feature-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+  .feature-card { background: #fff; border-radius: 12px; padding: 20px; border: 1px solid var(--line); }
+  .feature-card-icon { width: 32px; margin-bottom: 12px; }
+  .feature-card h3 { color: var(--brand); font-weight: 700; font-size: 15px; margin-bottom: 8px; }
+  .feature-card p { color: var(--body); font-size: 13px; line-height: 1.5; }
+  .transform-right { display: flex; flex-direction: column; justify-content: center; }
+  .transform-video { aspect-ratio: 16/9; border-radius: 12px 12px 0 0; overflow: hidden; background: linear-gradient(135deg, #2F6FED, #1A1A1A); }
+  .transform-video img { width: 100%; height: 100%; object-fit: cover; }
+  .transform-banner { background: #2B3447; color: #fff; border-radius: 0 0 12px 12px; padding: 16px 24px; font-size: 14px; line-height: 1.6; }
+  .transform-icons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; text-align: center; }
+  .transform-icon-img { width: 64px; height: 64px; margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; }
+  .transform-icon-img img { width: 100%; }
+  .transform-icon-label { font-weight: 700; color: var(--ink); font-size: 15px; }
+
+  /* ── 09 OSCILLATION PEACH ── */
+  .osc-peach { background: var(--peach); padding: 80px 0; text-align: center; }
+  .osc-peach h2 { font-size: 34px; font-weight: 700; }
+  .osc-peach .how { font-weight: 600; margin-top: 16px; }
+  .osc-peach .desc { max-width: 720px; margin: 16px auto 0; color: var(--body); font-size: 14px; line-height: 1.7; }
+  .before-after { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; align-items: center; margin-top: 48px; }
+  .ba-card { background: #fff; border-radius: 16px; padding: 24px; text-align: left; box-shadow: var(--shadow-card); }
+  .ba-card .ba-label { font-weight: 700; margin-bottom: 8px; }
+  .ba-card p { font-size: 13px; color: var(--body); line-height: 1.6; }
+  .ba-img { height: 220px; background: none; }
+  .ba-img img { width: 100%; height: 100%; object-fit: contain; }
+
+  /* ── 10 3 STEPS ── */
+  .steps { background: #fff; padding: 80px 0; text-align: center; }
+  .steps h2 { font-size: 34px; font-weight: 700; }
+  .steps-sub { margin-top: 8px; }
+  .steps-desc { max-width: 720px; margin: 24px auto 0; color: var(--body); }
+  .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; text-align: left; }
+  .step-img { aspect-ratio: 1/1; background: linear-gradient(135deg, #FFE8DC, #D6DCEA); border-radius: 12px; overflow: hidden; margin-bottom: 16px; }
+  .step-img img { width: 100%; height: 100%; object-fit: cover; }
+  .step-header { display: flex; align-items: center; gap: 12px; }
+  .step-num {
+    width: 40px; height: 40px; border-radius: 50%; background: var(--brand);
+    color: #fff; font-weight: 700; display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step-header h3 { font-size: 20px; font-weight: 700; }
+  .step-body { margin-top: 12px; color: var(--body); font-size: 14px; line-height: 1.6; }
+  .steps .cta { margin-top: 48px; }
+  .steps .review-row { margin-top: 12px; justify-content: center; }
+
+  /* ── 11 ENDLESS BENEFITS ── */
+  .benefits { background: #fff; padding: 64px 0 0; }
+  .benefits-header { text-align: center; }
+  .benefits-header h2 { font-size: 34px; font-weight: 700; }
+  .benefits-header .tagline { margin-top: 12px; font-weight: 600; color: var(--ink); }
+  .benefits-header .desc { max-width: 720px; margin: 16px auto 0; color: var(--body); font-size: 14px; line-height: 1.7; }
+  .benefits-banner { position: relative; margin-top: 40px; }
+  .benefits-banner .ph { height: 360px; border-radius: 0; }
+  .banner-overlay {
+    position: absolute; inset: auto 0 0; background: rgba(0,0,0,0.55);
+    color: #fff; padding: 12px 0;
+  }
+  .banner-tags {
+    display: flex; flex-wrap: wrap; gap: 24px; justify-content: center;
+    font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .benefits-cta { text-align: center; margin-top: 40px; padding-bottom: 64px; }
+  .benefits-cta .limit { font-weight: 700; color: var(--ink); }
+  .benefits-cta .sub { color: var(--body); font-size: 13px; margin-top: 4px; }
+  .benefits-cta .cta { margin-top: 24px; }
+  .benefits-cta .review-row { margin-top: 12px; justify-content: center; }
+
+  /* ── 12 COMPARISON ── */
+  .comparison { background: #fff; padding: 64px 0; }
+  .comparison h2 { font-size: 34px; font-weight: 700; text-align: center; margin-bottom: 40px; }
+  .comp-table { border-radius: 16px; overflow: hidden; border: 1px solid var(--line); }
+  .comp-row { display: grid; grid-template-columns: 2fr 1fr 1fr; }
+  .comp-cell { padding: 16px; font-size: 14px; }
+  .comp-cell.feature { color: var(--ink); }
+  .comp-cell.waver { background: rgba(255,232,220,0.4); text-align: center; }
+  .comp-cell.others { background: var(--surface); text-align: center; color: var(--body); }
+  .comp-row:not(:first-child) .comp-cell { border-top: 1px solid var(--line); }
+  .comp-row:first-child .comp-cell { font-weight: 700; color: var(--ink); }
+  .comp-row:first-child .comp-cell.waver { background: var(--peach); }
+  .comparison .cta { display: block; margin: 40px auto 0; width: fit-content; }
+  .comparison .review-row { margin-top: 12px; justify-content: center; }
+
+  /* ── 13 PRODUCT CARD ── */
+  .product-card { background: #fff; padding: 64px 0; }
+  .product-card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .product-card-img { height: 440px; background: radial-gradient(circle, #FFE8DC 0%, #fff 70%); }
+  .product-card .review-row { margin-bottom: 8px; }
+  .product-card h2 { font-size: 34px; font-weight: 700; text-transform: uppercase; }
+  .product-card .desc { margin-top: 16px; color: var(--body); }
+  .price-row { display: flex; align-items: baseline; gap: 12px; margin-top: 24px; }
+  .price-main { font-size: 40px; font-weight: 700; color: var(--ink); }
+  .price-was { font-size: 18px; text-decoration: line-through; color: var(--muted); }
+  .price-badge { background: var(--brand); color: #fff; font-size: 14px; font-weight: 700; padding: 4px 12px; border-radius: 999px; }
+  .color-label { font-size: 14px; color: var(--muted); margin-bottom: 8px; margin-top: 24px; }
+  .color-swatches { display: flex; gap: 12px; }
+  .swatch { width: 28px; height: 28px; border-radius: 50%; }
+  .swatch.active { outline: 2px solid var(--brand); outline-offset: 2px; }
+  .product-card .cta { margin-top: 24px; width: 100%; }
+  .product-perks { display: flex; gap: 16px; font-size: 16px; color: var(--muted); margin-top: 16px; }
+  .payment-icons { display: flex; gap: 8px; font-size: 12px; color: var(--muted); margin-top: 12px; }
+
+  /* ── 15 REVIEWS ── */
+  .reviews { background: var(--surface); padding: 80px 0; }
+  .reviews h2 { text-align: center; font-size: 30px; font-weight: 700; line-height: 1.25; }
+  .reviews-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
+  .review-card { background: #fff; border-radius: 16px; box-shadow: var(--shadow-card); padding: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .review-card img { width: 100%; border-radius: 8px; }
+  .reviewer-row { display: flex; align-items: center; gap: 8px; }
+  .reviewer-avatar { width: 40px; height: 40px; border-radius: 50%; overflow: hidden; flex-shrink: 0; }
+  .reviewer-avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .reviewer-name { font-weight: 700; color: var(--ink); font-size: 14px; }
+  .review-card h4 { font-weight: 700; text-transform: uppercase; margin-top: 12px; font-size: 14px; color: var(--ink); }
+  .review-card p { font-size: 13px; color: var(--body); margin-top: 8px; line-height: 1.6; }
+  .review-date { font-size: 12px; color: var(--muted); margin-top: 12px; }
+  .reviews .cta { display: block; margin: 48px auto 0; width: fit-content; }
+  .reviews .review-row { margin-top: 12px; justify-content: center; }
+
+  /* ── 16 FAQ ── */
+  .faq { background: #fff; padding: 80px 0; }
+  .faq-wrap { max-width: 720px; margin: 0 auto; }
+  .faq h2 { font-size: 30px; font-weight: 700; text-align: center; }
+  .faq-sub { text-align: center; color: var(--body); margin-top: 8px; }
+  .faq-list { margin-top: 40px; display: flex; flex-direction: column; gap: 12px; }
+  details { background: #fff; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  details[open] { box-shadow: var(--shadow-card); }
+  summary {
+    display: flex; justify-content: space-between; align-items: center;
+    cursor: pointer; font-weight: 600; color: var(--ink);
+    padding: 16px 20px; list-style: none;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary svg { flex-shrink: 0; color: var(--muted); transition: transform .2s; }
+  details[open] summary svg { transform: rotate(180deg); }
+  .faq-body { padding: 0 20px 20px; color: var(--body); font-size: 14px; line-height: 1.7; border-top: 1px solid var(--line); padding-top: 16px; }
+
+  /* ── 17 FOOTER ── */
+  footer { background: var(--ink); color: #fff; text-align: center; padding: 24px; font-size: 12px; }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .hero-grid,
+    .breakthrough-grid,
+    .transformation-grid,
+    .product-card-grid { grid-template-columns: 1fr; }
+    .hero-img { display: none; }
+    .use-cases-grid { grid-template-columns: repeat(3, 1fr); }
+    .before-after { grid-template-columns: 1fr; }
+    .ba-img { display: none; }
+    .comp-row { grid-template-columns: 1.5fr 1fr 1fr; }
+    .reviews-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 28px; }
+    .pillars-grid { grid-template-columns: 1fr; }
+    .trust-grid { grid-template-columns: 1fr; gap: 24px; }
+    .steps-grid { grid-template-columns: 1fr; }
+    .use-cases-grid { grid-template-columns: repeat(2, 1fr); }
+    .feature-cards { grid-template-columns: 1fr; }
+    .transform-icons { grid-template-columns: 1fr; }
+    .review-card { grid-template-columns: 1fr; }
+    .bundle-row { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 01 NAV -->
+<nav>
+  <div class="container-pg">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <span class="nav-wordmark"><img src="lifepro/public/Lifepro_color.png"/></span>
+      </div>
+      <a class="cta cta-sm">👉 Save 50% Now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- 02 HERO -->
+<section class="hero">
+  <div class="container-pg">
+    <div class="hero-grid">
+      <div>
+        <h1>The Ultimate Vibration Plate for Total Joint Pain Resolution!</h1>
+        <p class="hero-sub">Lifepro's Oscillation Technology eliminates stubborn muscle tension from any workout in minutes!</p>
+        <ul class="hero-list">
+          <li><span class="check">✓</span> Complete Full-Body Relief</li>
+          <li><span class="check">✓</span> Whisper-Quiet Operation</li>
+          <li><span class="check">✓</span> Home, Gym &amp; Recovery Uses!</li>
+          <li><span class="check">✓</span> 100% Effective (No Setup Hassle!)</li>
+          <li><span class="check">✓</span> Demolishes Stubborn Tension</li>
+        </ul>
+        <div class="hero-cta"><a class="cta">Order Now &amp; Save 50%</a></div>
+        <div class="hero-reviews review-row">
+          <span class="star">★★★★★</span>
+          <span class="text-muted">Over 26,000+ Reviews</span>
+        </div>
+      </div>
+      <div class="ph hero-img">[ hero lifestyle photo ]</div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 OSCILLATES / IMPROVES / ENERGIZES -->
+<section class="pillars">
+  <div class="container-pg">
+    <div class="pillars-grid">
+      <div>
+        <div class="pillar-icon"><img src="lifepro/Sound Wave.gif" alt="Oscillates" /></div>
+        <h3 class="eyebrow" style="margin-bottom:12px;">Oscillates</h3>
+        <p>The professional-grade motor creates powerful vibrations at 4-12Hz frequencies, stimulating muscles for maximum tension relief and flexibility.</p>
+      </div>
+      <div>
+        <div class="pillar-icon"><img src="lifepro/Optimization.gif" alt="Improves" /></div>
+        <h3 class="eyebrow" style="margin-bottom:12px;">Improves</h3>
+        <p>99 speed settings and 10mm amplitude boost circulation, enhance lymphatic flow, and target the root cause of persistent joint discomfort.</p>
+      </div>
+      <div>
+        <div class="pillar-icon"><img src="lifepro/Lightning V2.gif" alt="Energizes" /></div>
+        <h3 class="eyebrow" style="margin-bottom:12px;">Energizes</h3>
+        <p>The whisper-quiet, anti-slip design delivers a stable experience that leaves you remarkably energized and noticeably more mobile!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 OSCILLATION BREAKTHROUGH -->
+<section class="breakthrough">
+  <div class="container-pg">
+    <div class="breakthrough-grid">
+      <div class="ph breakthrough-img"><img src="lifepro/waver product.png" alt="Waver product" /></div>
+      <div>
+        <div class="eyebrow">Inside Lifepro Waver:</div>
+        <h2>The Oscillation Muscle-Recovery Breakthrough</h2>
+        <p>The secret to Lifepro Waver's effectiveness lies in its breakthrough oscillation technology, which instantly penetrates deep muscle fibers even in stubborn areas like joint structures and deep tissue that ordinary massagers can't reach.</p>
+        <p>Unlike conventional equipment, Lifepro Waver delivers professional results against chronic tension with its stabilized platform design, ensuring total safety while delivering an astonishing 60 muscle contractions per second.</p>
+        <div><a class="cta">Experience Results Now</a></div>
+        <div class="review-row" style="margin-top:16px;"><span class="star">★★★★★</span><span class="text-muted">Over 26,000+ Reviews</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 BUNDLE -->
+<section class="bundle">
+  <div class="container-pg">
+    <h3>Bundle &amp; Save More!</h3>
+    <div class="bundle-card">
+      <div class="bundle-row">
+        <div class="bundle-img"><img src="lifepro/waver-black.jpg" alt="Waver Black" /></div>
+        <div class="bundle-plus">+</div>
+        <div class="bundle-img"><img src="lifepro/massage.jpg" alt="Massage Gun" /></div>
+        <div class="bundle-total">
+          <div class="label">Total price:</div>
+          <div class="price">$379.98 USD</div>
+          <a class="cta" style="font-size:13px;padding:12px 24px;margin-top:12px;">Redeem Offer <span style="font-weight:400;margin-left:8px;">$211.75 USD</span></a>
+        </div>
+      </div>
+      <div class="bundle-items">
+        <label class="bundle-item">
+          <input type="checkbox" checked />
+          <span><strong>This item:</strong> Waver Vibration Plate Black</span>
+          <span class="item-price"><span class="line-through text-muted">$289.99 USD</span></span>
+        </label>
+        <label class="bundle-item">
+          <input type="checkbox" checked />
+          <span>Sonic Portable Deep Tissue Muscle Massager Gun Blue</span>
+          <span class="item-price">
+            <span class="line-through text-muted">$169.99</span>
+            <strong class="text-ink">$89.99</strong>
+            <span class="text-brand font-bold">$52.91</span>
+          </span>
+        </label>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 USE-CASE GRID -->
+<section class="use-cases">
+  <div class="container-pg">
+    <div class="use-cases-grid">
+      <div>
+        <div class="ph use-case-img"><img src="lifepro/case1.gif" alt="Case 1" /></div>
+        <p><strong>Primary Application</strong> Perfect for whole-body muscle recovery</p>
+      </div>
+      <div>
+        <div class="ph use-case-img"><img src="lifepro/case2.gif" alt="Case 2" /></div>
+        <p><strong>Product Demonstration</strong> Easy results with just one button press</p>
+      </div>
+      <div>
+        <div class="ph use-case-img"><img src="lifepro/case3.gif" alt="Case 3" /></div>
+        <p><strong>Secondary Application</strong> From strength training to flexibility enhancement</p>
+      </div>
+      <div>
+        <div class="ph use-case-img"><img src="lifepro/case6.gif" alt="Case 6" /></div>
+        <p><strong>Specialty Use Case</strong> Conquers stubborn lower back tension</p>
+      </div>
+      <div>
+        <div class="ph use-case-img"><img src="lifepro/case4.gif" alt="Case 4" /></div>
+        <p><strong>Alternative Application</strong> Unexpected solution for lymphatic drainage</p>
+      </div>
+      <div>
+        <div class="ph use-case-img"><img src="lifepro/case5.gif" alt="Case 5" /></div>
+        <p><strong>Common Setting</strong> Fits seamlessly into your home gym space</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 TRUST BADGES -->
+<section class="trust">
+  <div class="container-pg">
+    <div class="trust-grid">
+      <div>
+        <div class="trust-img"><img src="lifepro/usa.png" alt="Designed in USA" /></div>
+        <div class="trust-label">Designed in USA</div>
+      </div>
+      <div>
+        <div class="trust-img"><img src="lifepro/guarantee.png" alt="Lifetime Warranty" /></div>
+        <div class="trust-label">Lifetime Warranty</div>
+      </div>
+      <div>
+        <div class="trust-img"><img src="lifepro/free-delivery.png" alt="Free Shipping" /></div>
+        <div class="trust-label">Free Shipping</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 TRANSFORMATION -->
+<section class="transformation">
+  <div class="container-pg">
+    <div class="transformation-grid">
+      <!-- LEFT -->
+      <div>
+        <h2>The Ultimate Vibration Plate For Total Body Transformation!</h2>
+        <p class="transformation-tagline">from Chronic Pain to Remarkable Relief in Minutes!</p>
+        <p class="transformation-body">Our breakthrough oscillation technology in the Lifepro Waver delivers shocking circulation and muscle activation when tackling even the most stubborn, deep-tissue pain that other devices simply can't touch!</p>
+        <div class="feature-cards">
+          <div class="feature-card">
+            <div class="feature-card-icon"><img src="lifepro/sound.png" alt="" /></div>
+            <h3>Premium Oscillation Matrix</h3>
+            <p>Lifepro Waver exclusively uses advanced oscillation technology that delivers penetrating vibration patterns while ensuring rock-solid stability for dramatically safer, more effective recovery sessions that change everything!</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-icon"><img src="lifepro/stopwatch.png" alt="" /></div>
+            <h3>99-Speed Supercharger</h3>
+            <p>Lifepro Waver's precision control system means recovery sessions require only 10 minutes instead of hours of painful stretching and expensive therapy appointments that drain your wallet!</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-icon"><img src="lifepro/chage.png" alt="" /></div>
+            <h3>Limitless Applications</h3>
+            <p>Lifepro Waver adapts instantly to diverse fitness demands including rapid muscle recovery, dramatic circulation improvement, and even the most challenging rehabilitation scenarios that used to require professional help!</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-icon"><img src="lifepro/money-bag.png" alt="" /></div>
+            <h3>Lifetime Investment</h3>
+            <p>Each Lifepro Waver provides years of transformative wellness with an ironclad lifetime warranty, offering superior protection compared to flimsy fitness equipment that breaks down within months, leaving you frustrated!</p>
+          </div>
+        </div>
+      </div>
+      <!-- RIGHT -->
+      <div class="transform-right">
+        <div class="transform-video"><img src="lifepro/transform-vid.webp" alt="Transformation video" /></div>
+        <div class="transform-banner">
+          Experience recovery so powerful that improved mobility and complete pain elimination becomes your new daily reality - guaranteed!
+        </div>
+        <div class="transform-icons">
+          <div>
+            <div class="transform-icon-img"><img src="lifepro/heart.gif" alt="" /></div>
+            <div class="transform-icon-label">No More Pain!</div>
+          </div>
+          <div>
+            <div class="transform-icon-img"><img src="lifepro/clock.gif" alt="" /></div>
+            <div class="transform-icon-label">10-Min Results!</div>
+          </div>
+          <div>
+            <div class="transform-icon-img"><img src="lifepro/muscle.gif" alt="" /></div>
+            <div class="transform-icon-label">All Fitness Levels!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 09 BREAKTHROUGH OSCILLATION (peach) -->
+<section class="osc-peach">
+  <div class="container-pg">
+    <h2>BREAKTHROUGH OSCILLATION TECHNOLOGY!</h2>
+    <p class="how">Here's How:</p>
+    <p class="desc">The Lifepro Waver delivers precisely calibrated 4Hz-12Hz frequencies that penetrate deep tissues instantly. Simply step on, select from 9 powerful programs (or customize with 99 speed settings!), and let the revolutionary oscillations transform your recovery in minutes!</p>
+    <p class="desc">Unlike outdated recovery methods requiring painful effort and wasting precious hours, the Waver works passively while you stand or sit!</p>
+
+    <div class="before-after">
+      <div class="ba-card">
+        <div class="ba-label"><span style="color:var(--bad);">🔴 BEFORE:</span></div>
+        <p><strong>OLD</strong> Endless hours wasted on painful stretching and expensive massage therapy with disappointing results. Traditional methods leave you exhausted when you're already depleted from workouts.</p>
+      </div>
+      <div class="ph ba-img"><img src="lifepro/element1.png" alt="" /></div>
+      <div class="ba-card">
+        <div class="ba-label"><span class="check">🟢 AFTER:</span></div>
+        <p><strong>WAVER</strong> Just 10 minutes delivers complete muscle recovery without effort! Powerful oscillation technology works through your entire body instantly for dramatic results that used to take days!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 3 STEPS -->
+<section class="steps">
+  <div class="container-pg">
+    <h2>RELIEVE PAIN IN MINUTES!</h2>
+    <p class="eyebrow steps-sub">Just 3 Simple Steps to Relief!</p>
+    <p class="steps-desc">The Lifepro Waver delivers breakthrough muscle recovery with powerful oscillation technology that transforms how you heal - at home or in the gym!</p>
+    <div class="steps-grid">
+      <div>
+        <div class="ph step-img"><img src="lifepro/step1.gif" alt="Step 1" /></div>
+        <div class="step-header">
+          <span class="step-num">1</span>
+          <h3>Power Up</h3>
+        </div>
+        <p class="step-body">Place Waver on flat surface and plug into any standard outlet - setup takes just seconds!</p>
+      </div>
+      <div>
+        <div class="ph step-img"><img src="lifepro/step2.gif" alt="Step 2" /></div>
+        <div class="step-header">
+          <span class="step-num">2</span>
+          <h3>Select Mode</h3>
+        </div>
+        <p class="step-body">Choose from 9 pre-set programs or customize with 99 speed settings for your perfect intensity!</p>
+      </div>
+      <div>
+        <div class="ph step-img"><img src="lifepro/step3.gif" alt="Step 3" /></div>
+        <div class="step-header">
+          <span class="step-num">3</span>
+          <h3>Experience</h3>
+        </div>
+        <p class="step-body">Just 10 minutes on the platform melts away muscle tension and pain that used to linger for days!</p>
+      </div>
+    </div>
+    <a class="cta">Order Now &amp; Save 50%</a>
+    <div class="review-row" style="margin-top:12px;justify-content:center;">
+      <span class="star">★★★★★</span><span class="text-muted">Over 26,000+ Reviews</span>
+    </div>
+  </div>
+</section>
+
+<!-- 11 ENDLESS BENEFITS -->
+<section class="benefits">
+  <div class="benefits-header container-pg">
+    <h2>One Device, Endless Benefits</h2>
+    <p class="tagline">Perfect for Home, Gym, Office, Clinic or Rehabilitation</p>
+    <p class="desc">Traditional recovery methods demand time, effort, and often cause more discomfort than relief. The Lifepro Waver delivers effortless muscle and joint therapy through its powerful oscillation technology.</p>
+  </div>
+  <div class="benefits-banner">
+    <div class="ph" style="height:360px;border-radius:0;">[ wide panorama — home gym / living / therapy / center / rehab ]</div>
+    <div class="banner-overlay">
+      <div class="container-pg">
+        <div class="banner-tags">
+          <span>Home Gym</span><span>·</span>
+          <span>Living Room</span><span>·</span>
+          <span>Physical Therapy</span><span>·</span>
+          <span>Fitness Center</span><span>·</span>
+          <span>Rehabilitation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="benefits-cta container-pg">
+    <p class="limit">LIMITED TIME: Save 50% On Your Order Today</p>
+    <p class="sub">Protected By Our Lifetime Warranty Guarantee</p>
+    <a class="cta">Order Now &amp; Save 50%</a>
+    <div class="review-row" style="margin-top:12px;justify-content:center;">
+      <span class="star">★★★★★</span><span class="text-muted">Over 26,000+ Reviews</span>
+    </div>
+  </div>
+</section>
+
+<!-- 12 COMPARISON -->
+<section class="comparison">
+  <div class="container-pg">
+    <h2>Lifepro Waver vs Others</h2>
+    <div class="comp-table">
+      <div class="comp-row">
+        <div class="comp-cell feature" style="background:var(--surface);">Feature</div>
+        <div class="comp-cell waver" style="background:var(--peach);">Lifepro Waver</div>
+        <div class="comp-cell others">Other Platforms</div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-cell feature">Full-Body Wellness</div>
+        <div class="comp-cell waver check">✓</div>
+        <div class="comp-cell others">Limited Coverage</div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-cell feature">Whisper Quiet Operation</div>
+        <div class="comp-cell waver check">✓</div>
+        <div class="comp-cell others">Often Noisy</div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-cell feature">99 Speed Settings</div>
+        <div class="comp-cell waver check">✓</div>
+        <div class="comp-cell others">Typically 5-10</div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-cell feature">9 Auto Programs</div>
+        <div class="comp-cell waver check">✓</div>
+        <div class="comp-cell others">Few or None</div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-cell feature">Anti-Slip Surface</div>
+        <div class="comp-cell waver check">✓</div>
+        <div class="comp-cell others">Not Standard</div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-cell feature">Lifetime Warranty</div>
+        <div class="comp-cell waver check">✓</div>
+        <div class="comp-cell others">1 Year Average</div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-cell feature">Resistance Bands Included</div>
+        <div class="comp-cell waver check">✓</div>
+        <div class="comp-cell others">Sold Separately</div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-cell feature">Professional-Grade Motor</div>
+        <div class="comp-cell waver check">✓</div>
+        <div class="comp-cell others">Lower Quality</div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-cell feature">Supports All Fitness Levels</div>
+        <div class="comp-cell waver check">✓</div>
+        <div class="comp-cell others">Limited Range</div>
+      </div>
+    </div>
+    <a class="cta">Order Now &amp; Save 50%</a>
+    <div class="review-row" style="margin-top:12px;justify-content:center;">
+      <span class="star">★★★★★</span><span class="text-muted">Over 26,000+ Reviews</span>
+    </div>
+  </div>
+</section>
+
+<!-- 13 PRODUCT CARD -->
+<section class="product-card">
+  <div class="container-pg">
+    <div class="product-card-grid">
+      <div class="ph product-card-img"><img src="lifepro/waver product.png"></div>
+      <div>
+        <div class="review-row"><span class="star">★★★★★</span><span class="text-muted">26,000+ Reviews</span></div>
+        <h2>Waver Vibration Plate</h2>
+        <p class="desc">Your all-in-one platform for low-impact fat burn, strength, and recovery. The Waver uses powerful oscillation to activate your body's natural ability to repair and recharge.</p>
+        <div class="price-row">
+          <span class="price-main">$199.99</span>
+          <span class="price-was">$399.99</span>
+          <span class="price-badge">50% OFF</span>
+        </div>
+        <div class="color-label">Color: Blue</div>
+        <div class="color-swatches">
+          <span class="swatch active" style="background:#2F6FED;"></span>
+          <span class="swatch" style="background:#1A1A1A;"></span>
+          <span class="swatch" style="background:#B8B8B8;"></span>
+          <span class="swatch" style="background:#A87B5E;"></span>
+        </div>
+        <a class="cta" style="width:100%;justify-content:center;">Order Now &amp; Save 50%</a>
+        <div class="product-perks">
+          <span>🛡 Lifetime Warranty</span>
+          <span>🚚 Free Shipping</span>
+        </div>
+        <div class="payment-icons">
+          <span>VISA</span><span>MC</span><span>AMEX</span><span>PayPal</span><span>ApplePay</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 14 BUNDLE (repeat) -->
+<section class="bundle">
+  <div class="container-pg">
+    <h3>Bundle &amp; Save More!</h3>
+    <div class="bundle-card">
+      <div class="bundle-row">
+        <div class="bundle-img"><img src="lifepro/waver-black.jpg" alt="Waver Black" /></div>
+        <div class="bundle-plus">+</div>
+        <div class="bundle-img"><img src="lifepro/massage.jpg" alt="Massage Gun" /></div>
+        <div class="bundle-total">
+          <div class="label">Total price:</div>
+          <div class="price">$379.98 USD</div>
+          <a class="cta" style="font-size:13px;padding:12px 24px;margin-top:12px;">Redeem Offer <span style="font-weight:400;margin-left:8px;">$211.75 USD</span></a>
+        </div>
+      </div>
+      <div class="bundle-items">
+        <label class="bundle-item">
+          <input type="checkbox" checked />
+          <span><strong>This item:</strong> Waver Vibration Plate Black</span>
+          <span class="item-price"><span class="line-through text-muted">$289.99 USD</span></span>
+        </label>
+        <label class="bundle-item">
+          <input type="checkbox" checked />
+          <span>Sonic Portable Deep Tissue Muscle Massager Gun Blue</span>
+          <span class="item-price">
+            <span class="line-through text-muted">$169.99</span>
+            <strong class="text-ink">$89.99</strong>
+            <span class="text-brand font-bold">$52.91</span>
+          </span>
+        </label>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 15 REVIEWS -->
+<section class="reviews">
+  <div class="container-pg">
+    <h2>JOIN OVER 26,000+ CUSTOMERS WHO'VE TRANSFORMED THEIR BODIES WITH THE LIFEPRO WAVER!</h2>
+    <div class="reviews-grid">
+
+      <article class="review-card">
+        <div><img src="lifepro/r1.png" alt="Review photo" /></div>
+        <div>
+          <div class="reviewer-row">
+            <div class="reviewer-avatar"><img src="lifepro/image.png" alt="Megan R." /></div>
+            <div>
+              <div class="reviewer-name">Megan R.</div>
+              <div class="star">★★★★★ <span class="text-ink font-bold" style="margin-left:4px;">4.9/5</span></div>
+            </div>
+          </div>
+          <h4>Eliminated My Back Pain in Days!</h4>
+          <p>After two lower back surgeries and always having a tight, painful back, this Waver gave me a loose back the first time I used it! Only using it for 10 minutes at the easy setting while doing simple stretches, this WAVE has completely changed my daily life for the first time in 40 years!</p>
+          <div class="review-date">March 8, 2025</div>
+        </div>
+      </article>
+
+      <article class="review-card">
+        <div><img src="lifepro/image.jpg" alt="Review photo" /></div>
+        <div>
+          <div class="reviewer-row">
+            <div class="reviewer-avatar"><img src="lifepro/image-1.png" alt="Thomas W." /></div>
+            <div>
+              <div class="reviewer-name">Thomas W.</div>
+              <div class="star">★★★★★ <span class="text-ink font-bold" style="margin-left:4px;">4.5/5</span></div>
+            </div>
+          </div>
+          <h4>Shocking Results for Circulation!</h4>
+          <p>I was having severe blood pressure issues that wouldn't come down even with medications. After just one week using the Waver, my blood pressure dropped to 120/81! Whenever it goes up, I just do a 15-minute session. This machine literally saved my life!</p>
+          <div class="review-date">January 22, 2025</div>
+        </div>
+      </article>
+
+      <article class="review-card">
+        <div><img src="lifepro/image-1.jpg" alt="Review photo" /></div>
+        <div>
+          <div class="reviewer-row">
+            <div class="reviewer-avatar"><img src="lifepro/image-2.png" alt="Sarah J." /></div>
+            <div>
+              <div class="reviewer-name">Sarah J.</div>
+              <div class="star">★★★★★ <span class="text-ink font-bold" style="margin-left:4px;">4.6/5</span></div>
+            </div>
+          </div>
+          <h4>Lymphatic Drainage is Incredible!</h4>
+          <p>I have a chronic health condition where my lymphatic system doesn't work well. This vibration plate works AMAZINGLY for detoxing and moving my lymphatic system! My legs feel lighter, less bloated, and more energized!</p>
+          <div class="review-date">April 14, 2025</div>
+        </div>
+      </article>
+
+      <article class="review-card">
+        <div><img src="lifepro/image-2.jpg" alt="Review photo" /></div>
+        <div>
+          <div class="reviewer-row">
+            <div class="reviewer-avatar"><img src="lifepro/image-3.png" alt="David M." /></div>
+            <div>
+              <div class="reviewer-name">David M.</div>
+              <div class="star">★★★★★ <span class="text-ink font-bold" style="margin-left:4px;">4.5/5</span></div>
+            </div>
+          </div>
+          <h4>Perfect for Home Workouts!</h4>
+          <p>The Waver delivers 60 powerful muscle contractions per second through your entire body! I've noticed my legs are more toned, my circulation has improved dramatically, and I'm sleeping better than ever.</p>
+          <div class="review-date">February 3, 2025</div>
+        </div>
+      </article>
+
+      <article class="review-card">
+        <div><img src="lifepro/image-3.jpg" alt="Review photo" /></div>
+        <div>
+          <div class="reviewer-row">
+            <div class="reviewer-avatar"><img src="lifepro/image-4.png" alt="Brenda K." /></div>
+            <div>
+              <div class="reviewer-name">Brenda K.</div>
+              <div class="star">★★★★★ <span class="text-ink font-bold" style="margin-left:4px;">4.5/5</span></div>
+            </div>
+          </div>
+          <h4>Shaking That Buttie</h4>
+          <p>Thank you for such a great vibration plate. The waver is helping with my husband's feet. It is bringing some relief from cold numb feet to a sensation and not burning when he gets out of bed. Very quiet.</p>
+          <div class="review-date">March 25, 2025</div>
+        </div>
+      </article>
+
+      <article class="review-card">
+        <div><img src="lifepro/image-4.jpg" alt="Review photo" /></div>
+        <div>
+          <div class="reviewer-row">
+            <div class="reviewer-avatar"><img src="lifepro/image-5.png" alt="Elaine T." /></div>
+            <div>
+              <div class="reviewer-name">Elaine T.</div>
+              <div class="star">★★★★★ <span class="text-ink font-bold" style="margin-left:4px;">4.5/5</span></div>
+            </div>
+          </div>
+          <h4>Solid, Smooth, and Quiet!</h4>
+          <p>I love it!!!!!!! Have had it less than a week but I'm loving experimenting and trying new exercises! Great for balance!</p>
+          <div class="review-date">May 5, 2025</div>
+        </div>
+      </article>
+
+    </div>
+    <a class="cta">Order Now &amp; Save 50%</a>
+    <div class="review-row" style="margin-top:12px;justify-content:center;">
+      <span class="star">★★★★★</span><span class="text-muted">Over 26,000+ Reviews</span>
+    </div>
+  </div>
+</section>
+
+<!-- 16 FAQ -->
+<section class="faq">
+  <div class="container-pg">
+    <div class="faq-wrap">
+      <h2>Frequently Asked Questions</h2>
+      <p class="faq-sub">We're Here To Help</p>
+      <div class="faq-list">
+
+        <details>
+          <summary>
+            How often should I use the Lifepro Waver?
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-body">For best results, we recommend using the Lifepro Waver for 10-15 minutes per session, 1-3 times daily. Many users start with once daily and gradually increase as they become more comfortable with vibration therapy and see positive results.</div>
+        </details>
+
+        <details>
+          <summary>
+            Is the Lifepro Waver safe for everyone to use?
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-body">The Lifepro Waver is designed for adult use and is generally safe for most people. However, those who are pregnant, have recent surgeries, acute injuries, pacemakers, or certain medical conditions should consult with their healthcare provider before use. Always start with the lowest intensity setting.</div>
+        </details>
+
+        <details>
+          <summary>
+            How do I set up the Lifepro Waver?
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-body">Setup is simple! Place the Waver on a stable, flat surface, connect the power cord to a standard outlet, and use the included remote control to select your desired program or speed level. The anti-slip surface ensures stability during operation.</div>
+        </details>
+
+        <details>
+          <summary>
+            What makes the Lifepro Waver different from other platforms?
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-body">The Lifepro Waver offers 99 speed settings and 9 auto programs compared to the typical 5-10 speeds found on other platforms. Its whisper-quiet operation, anti-slip surface, and lifetime warranty set it apart from competitors that typically offer only 1-year coverage.</div>
+        </details>
+
+        <details>
+          <summary>
+            How long is the warranty period?
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-body">We stand behind our product with a lifetime warranty. If your Lifepro Waver ever experiences any issues, we'll repair or replace it at no cost to you, giving you complete peace of mind with your purchase.</div>
+        </details>
+
+        <details>
+          <summary>
+            Can I use the Lifepro Waver on carpet?
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-body">Yes, the Lifepro Waver can be used on carpet, though for optimal stability and performance, we recommend placing it on a firm, flat surface. If you must use it on carpet, consider using it on low-pile carpeting or adding a non-slip exercise mat underneath.</div>
+        </details>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 17 FOOTER -->
+<footer>
+  © 2025, Lifepro Fitness. Privacy Policy | Shipping Policy | Return Policy
+</footer>
+
+</body>
+</html>
