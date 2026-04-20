@@ -28,11 +28,5 @@ Design system for LifePro Fitness — used as a reference for Claude-generated U
 
 `tokens.json` captures the Desktop (1440) default only. Regenerate per mode if multi-mode variable collections are needed in Figma.
 
-## Figma
-- File ID: `03yABO4wJSV78SPvLjdkyB`
-- Variable collections: Primitives/Colors, Responsive/Spacing (3 modes), Effects/Shadows
-- Local text styles: 13
-- Effect styles: 6
-
 ## Styling Approach
 Vanilla CSS with custom properties. No Tailwind, no CSS-in-JS. Keeps tokens resolvable by Figma MCP and other design tools.
