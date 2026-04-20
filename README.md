@@ -1,2 +1,0 @@
-# -lifepro
-lifepro-design-system
